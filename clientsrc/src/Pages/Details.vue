@@ -38,10 +38,62 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-10"></div>
+      <div class="col-8"></div>
+      <div class="col-1">
+
+        <div
+          class="modal fade"
+          id="orangeModalSubscription"
+          tabindex="-1"
+          aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-notify modal-warning" role="document">
+            <!--Content-->
+            <div class="modal-content">
+              <!--Header-->
+              <div class="modal-header text-center">
+                <h4 class="modal-title white-text w-100 font-weight-bold py-2"></h4>
+                <button type="button" class="close" data-dismiss="modal " aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <!--Body-->
+              <div class="modal-body">
+                <div class="md-form mb-5">
+                  <i class="fas fa-user prefix grey-text"></i>
+                  <input type="text" id="form3" class="form-control" v-model="newNote.content" />
+                  <label data-error="wrong" data-success="right" for="form3">Message</label>
+                </div>
+              </div>
+
+              <!--Footer-->
+              <div class="modal-footer justify-content-center">
+                <button
+                  type="button"
+                  class="btn  waves-effect"
+                  data-dismiss="modal"
+                  @click.prevent="addNote()"
+                >Add</button>
+              </div>
+            </div>
+            <!--/.Content-->
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href
+            class="btn bg-success btn-rounded"
+            data-toggle="modal"
+            data-target="#orangeModalSubscription"
+          >Add Comment</a>
+        </div>
+
+      </div>
       <div class="col-2">
         <!-- NOTE Close & Edit Buttons-->
-        <button class="btn btn-danger mr-3 btn-rounded shadow" v-if="!bug.closed" @click="closeBug()">Close Bug</button>
+        <button class="btn btn-danger btn-rounded shadow" v-if="!bug.closed" @click="closeBug()">Close Bug</button>
         <span>
           <button
             v-if="$auth.isAuthenticated &&  !bug.closed"
@@ -87,61 +139,7 @@
           </tbody>
         </table>
 
-        <div
-          class="modal fade"
-          id="orangeModalSubscription"
-          tabindex="-1"
-          aria-labelledby="myModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-notify modal-warning" role="document">
-            <!--Content-->
-            <div class="modal-content">
-              <!--Header-->
-              <div class="modal-header text-center">
-                <h4 class="modal-title white-text w-100 font-weight-bold py-2"></h4>
-                <button type="button" class="close" data-dismiss="modal " aria-label="Close">
-                  <span aria-hidden="true" class="white-text">&times;</span>
-                </button>
-              </div>
-
-              <!--Body-->
-              <div class="modal-body">
-                <div class="md-form mb-5">
-                  <i class="fas fa-user prefix grey-text"></i>
-                  <input type="text" id="form3" class="form-control" v-model="newNote.content" />
-                  <label data-error="wrong" data-success="right" for="form3">Message</label>
-                </div>
-
-                <!-- <div class="md-form">
-          <i class="fas fa-envelope prefix grey-text"></i>
-          <input type="email" id="form2" class="form-control "  v-model="newBug.description">
-          <label data-error="wrong" data-success="right" for="form2"></label>
-                </div>-->
-              </div>
-
-              <!--Footer-->
-              <div class="modal-footer justify-content-center">
-                <button
-                  type="button"
-                  class="btn  waves-effect"
-                  data-dismiss="modal"
-                  @click.prevent="addNote()"
-                >Add</button>
-              </div>
-            </div>
-            <!--/.Content-->
-          </div>
-        </div>
-
-        <div class="text-center">
-          <a
-            href
-            class="btn bg-success btn-rounded"
-            data-toggle="modal"
-            data-target="#orangeModalSubscription"
-          >Add Comment</a>
-        </div>
+    
       </div>
     </div>
     <div class="row">
