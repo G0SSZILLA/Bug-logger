@@ -56,7 +56,7 @@ export default new Vuex.Store({
 
         //#region Bugs
 
-        async getBugs({ commit, dispatch }, bugId) {
+        async getBugs({ commit, dispatch }) {
             try {
                 let res = await api.get("bugs");
                 console.log("from get bug", res);
@@ -70,7 +70,6 @@ export default new Vuex.Store({
             try {
                 let res = await api.get('bugs/' + bugId, bugId);
                 console.log("activeBug", res.data);
-
                 commit("setActiveBug", res.data);
             } catch (error) {
                 console.error(error);
