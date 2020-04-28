@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" :to="{ name: 'Home' }"
-      >AppName</router-link
+  <nav class="navbar navbar-expand-lg navbar-light bg-info border-1">
+    <router-link class="navbar-brand text-white" :to="{ name: 'Home' }"
+      >Bug Tracker</router-link
     >
     <button
       class="navbar-toggler"
@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" :class="{ active: $route.name == 'Home' }">
-          <router-link :to="{ name: 'Home' }" class="nav-link"
+          <router-link :to="{ name: 'Home' }" class="nav-link text-white"
             >Home</router-link
           >
         </li>
