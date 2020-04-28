@@ -16,7 +16,7 @@ const routes = [{
         component: Home,
     },
     {
-        path: "/notes",
+        path: "/notes/:bugId",
         name: "Details",
         component: Details,
         beforeEnter: authGuard,
