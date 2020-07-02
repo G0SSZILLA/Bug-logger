@@ -21,6 +21,11 @@ class NoteService {
     }
 
     async create(rawData) {
+        let bug = await dbContext.Bugs.findById(rawData.bugId)
+            // @ts-ignore
+        if (bug.closed) {
+            throw new BadRequest('This bug is closed cant add a note.')
+        }
         let data = await dbContext.Notes.create(rawData)
         return data
     }
