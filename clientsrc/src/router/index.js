@@ -21,12 +21,18 @@ const routes = [{
         component: Details,
         beforeEnter: authGuard,
     },
-    // {
-    //     path: "/profile",
-    //     name: "Profile",
-    //     component: Profile,
-    //     beforeEnter: authGuard,
-    // },
+    {
+        path: "/profile",
+        name: "Profile",
+        component: Profile,
+        beforeEnter: authGuard,
+    },
+    {
+        path: "/profile",
+        name: "Profile",
+        component: Profile,
+        beforeEnter: authGuard,
+    },
 ];
 
 const router = new VueRouter({
